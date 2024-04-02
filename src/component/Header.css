@@ -53,6 +53,7 @@
 h1 {
   font-family: 'IBM Plex Sans KR', sans-serif;
   font-size: var(--small--text);
+  color: var(--theme--dark--solids);
 }
 
 .greenfrogExplain {

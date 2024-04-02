@@ -9,14 +9,19 @@ import logo from './figfile/logo1.svg';
 export default function Header() {
   return (
     <div className='HeaderDiv'style={{ display: 'flex', alignItems: 'center' }}>
-        <Link to="/">
+        
+        {/* Link 색깔 --theme---dark---solids */}
+        <Link to="/" style={{ textDecoration: 'none', color : '#16192C' }}>
+          
           <span className='logo_container'>
-          <img className='logo_image' src={logo} alt='greenfrog' />
+            <img className='logo_image' src={logo} alt='greenfrog' />
           </span>
+
           <h1>
             <span className='greenfrogTitle'>청개고리</span><br></br>
             <span className='greenfrogExplain'>청</span>년 <span className='greenfrogExplain'>개</span>발자들의 연결 <span className='greenfrogExplain'>고리</span>
           </h1>
+          
         </Link>
 
         <nav>

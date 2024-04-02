@@ -2,7 +2,7 @@ import React from 'react';
 import './Request.css';
 import '../index.css';
 import intro_req from './figfile/intro_req.svg';
-//import search_button from './figfile/search_button.svg';
+//import search_button from './buttonfile/search_button.svg';
 
 export default function Request(){
     return (
