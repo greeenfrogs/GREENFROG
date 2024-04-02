@@ -1,7 +1,8 @@
-import './Request.css';
 import React from 'react';
+import './Request.css';
 import '../index.css';
-import intro_req from './intro_req.svg';
+import intro_req from './figfile/intro_req.svg';
+//import search_button from './figfile/search_button.svg';
 
 export default function Request(){
     return (
@@ -9,6 +10,12 @@ export default function Request(){
             <span className='introduce_container'>
             <img className='introduce_image' src={intro_req} alt='introduce_req' />
             </span>
+            {/* <br></br>
+            <ul>
+                <li className='searchbutton_container'>
+                    <img className='searchimg' src={search_button} alt='search_button' />
+                </li>
+            </ul> */}
         </div>
     );
 }

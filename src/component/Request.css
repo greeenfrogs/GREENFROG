@@ -1,9 +1,9 @@
-.introduce_image{
-    width: 100%;
-    height: auto;
+.searchbutton_container{
+    list-style: none;
 }
 
-.introduce_container{
-    margin-top: 1px;
-    margin-bottom: 5px;
+.searchimg{
+    width: 60px;
+    height: auto;
+    margin: 3px auto;
 }

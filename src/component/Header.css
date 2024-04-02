@@ -58,3 +58,11 @@ h1 {
 .greenfrogExplain {
   color: var(--theme---primary---solids);
 }
+
+li {
+  list-style: none;
+  margin : 10 10 10 10;
+  padding: 10 10 10 10;
+  border: 0px;
+  float: left;
+}
