@@ -7,20 +7,6 @@ function App() {
     <div className="App">
       <Header />
       <Request />
-      <header className="App-header">
-        <p>this is header</p>
-        <p>
-          greenfrog
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
     </div>
   );
 }
