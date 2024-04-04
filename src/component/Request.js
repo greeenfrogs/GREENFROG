@@ -6,6 +6,8 @@ import searchbar_svg from './buttonfile/searchbar.svg';
 import searchtype_svg from './buttonfile/searchtype.svg';
 import frog_empty_svg from './buttonfile/frog_empty.svg';
 import correct_button_svg from './buttonfile/correct_button.svg';
+import Searchbar from './Request_func/Searchbar';
+import Searchtype from './Request_func/Searchtype';
 
 export default function Mypage() {
     const [menu, setMenu] = useState('');
