@@ -4,6 +4,7 @@ import '../index.css';
 import intro_req from './figfile/intro_req.svg';
 import searchbar_svg from './buttonfile/searchbar.svg';
 import searchtype_svg from './buttonfile/searchtype.svg';
+import write_button_svg from './buttonfile/write_button.svg'; // write_button_svg 추가
 import frog_empty_svg from './buttonfile/frog_empty.svg';
 import frog_click_svg from './buttonfile/frog_click.svg';
 import correct_button_svg from './buttonfile/correct_button.svg';
@@ -12,7 +13,9 @@ import Searchtype from './Request_func/Searchtype';
 
 export default function Mypage() {
     const [menu, setMenu] = useState('');
-    const [frogClicked, setFrogClicked] = useState(Array.from({length: 11}, () => false));
+    const [frogClicked, setFrogClicked] = useState(Array.from({ length: 11 }, () => false));
+    const [currentPage, setCurrentPage] = useState(1);
+    const totalPages = 10; // 전체 페이지 수
 
     const handleMenuClick = (selectedMenu) => {
         setMenu(selectedMenu);
@@ -24,25 +27,66 @@ export default function Mypage() {
         setFrogClicked(updatedFrogClicked);
     };
 
+    const handleNextPage = () => {
+        setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
+    };
+
+    const handlePrevPage = () => {
+        setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
+    };
+
+    const handleFirstPage = () => {
+        setCurrentPage(1);
+    };
+
+    const handleLastPage = () => {
+        setCurrentPage(totalPages);
+    };
+
+    const handlePageClick = (page) => {
+        setCurrentPage(page);
+    };
+
+    const renderPageNumbers = () => {
+        const pages = [];
+        const visiblePages = 10; // 최대로 표시될 페이지 수
+
+        for (let page = 1; page <= totalPages; page++) {
+            pages.push(
+                <button key={page} onClick={() => handlePageClick(page)} className={page === currentPage ? 'active' : ''}>
+                    {page}
+                </button>
+            );
+
+            if (pages.length >= visiblePages) break;
+        }
+
+        return pages;
+    };
+
     return (
         <div>
             <div className='introduce_container'>
                 <img className='introduce_image' src={intro_req} alt='introduce_req' />
-                <div className="menu">
-                    {/* Searchbar 버튼 */}
-                    <img className="Searchbar" src={searchbar_svg} alt="searchbar" onClick={() => handleMenuClick('memberInfo')} />
-                    {/* Searchtype 버튼 */}
-                    <div className="dropdown" style={{ position: 'relative', display: 'inline-block' }}>
-                        <img className="Searchtype" src={searchtype_svg} alt="searchtype" onClick={() => handleMenuClick('searchtype')} />
-                        <div className="dropdown-content" style={{ position: 'absolute', top: '100%', zIndex: 1 }}>
-                            <a className="bold-text" href="#">전체</a>
-                            <a className="bold-text" href="#">즐겨찾기</a>
-                            <a className="bold-text" href="#">진행중</a>
-                            <a className="bold-text" href="#">프론트</a>
-                            <a className="bold-text" href="#">백</a>
-                            <a className="bold-text" href="#">UI/UX</a>
+                <div className="menu" style={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <div style={{ display: 'flex' }}> {/* searchbar와 searchtype를 하나의 div로 묶음 */}
+                        {/* Searchbar 버튼 */}
+                        <img className="Searchbar" src={searchbar_svg} alt="searchbar" style={{ marginTop: '12px' }} onClick={() => handleMenuClick('memberInfo')} />
+                        {/* Searchtype 버튼 */}
+                        <div className="dropdown" style={{ position: 'relative', display: 'inline-block' }}>
+                            <img className="Searchtype" src={searchtype_svg} alt="searchtype" style={{ marginTop: '12px' }} onClick={() => handleMenuClick('searchtype')} />
+                            <div className="dropdown-content" style={{ position: 'absolute', top: '100%', zIndex: 1 }}>
+                                <a className="heading3" href="#">전체</a>
+                                <a className="heading3" href="#">즐겨찾기</a>
+                                <a className="heading3" href="#">진행중</a>
+                                <a className="heading3" href="#">프론트</a>
+                                <a className="heading3" href="#">백</a>
+                                <a className="heading3" href="#">UI/UX</a>
+                            </div>
                         </div>
                     </div>
+                    {/* write_button_svg 추가 */}
+                    <img className="WriteButton" src={write_button_svg} alt="write_button" style={{ marginBottom: '10px' }} onClick={() => handleMenuClick('write')} />
                 </div>
             </div>
             <div className="wrapper">
@@ -61,7 +105,7 @@ export default function Mypage() {
                                 {Array.from(Array(7).keys()).map(col => (
                                     <td
                                         key={col}
-                                        className={(col === 0 && row !== 0 && row !== 10) ? 'bold-text' : ''}
+                                        className={(col === 0 && row !== 0 && row !== 10) ? 'heading3' : ''}
                                         style={{ border: 'none', padding: '10px' }}
                                     >
                                         {(col === 0 && row === 0) ? '' :
@@ -69,13 +113,14 @@ export default function Mypage() {
                                             (col === 0) ? 
                                                 <img src={frogClicked[row] ? frog_click_svg : frog_empty_svg} 
                                                      alt={`frog_${row}-${col}`} 
+                                                     style={{ marginTop: '10px' }}
                                                      onClick={() => handleFrogClick(row)} /> :
-                                            (col === 6) ? <img src={correct_button_svg} alt={`correct_button_${row}-${col}`} /> :
-                                            (col === 1 && row === 0) ? <span className="bold-text">가격</span> :
-                                            (col === 2 && row === 0) ? <span className="bold-text">인원</span> :
-                                            (col === 3 && row === 0) ? <span className="bold-text">의뢰처</span> :
-                                            (col === 4 && row === 0) ? <span className="bold-text">의뢰제목</span> :
-                                            (col === 5 && row === 0) ? <span className="bold-text">진행 중</span> :
+                                            (col === 6) ? <img src={correct_button_svg} alt={`correct_button_${row}-${col}`} style={{ marginTop: '10px' }} /> :
+                                            (col === 1 && row === 0) ? <span className="heading3">가격</span> :
+                                            (col === 2 && row === 0) ? <span className="heading3">인원</span> :
+                                            (col === 3 && row === 0) ? <span className="heading3">의뢰처</span> :
+                                            (col === 4 && row === 0) ? <span className="heading3">의뢰제목</span> :
+                                            (col === 5 && row === 0) ? <span className="heading3">진행 중</span> :
                                             `${row}-${col}`}
                                     </td>
                                 ))}
@@ -83,6 +128,13 @@ export default function Mypage() {
                         ))}
                     </tbody>
                 </table>
+            </div>
+            <div className="pagination" style={{ margin: '50px 0' }}>
+                <button onClick={handleFirstPage}>«</button>
+                <button onClick={handlePrevPage}>‹</button>
+                {renderPageNumbers()}
+                <button onClick={handleNextPage}>›</button>
+                <button onClick={handleLastPage}>»</button>
             </div>
         </div>
     );
