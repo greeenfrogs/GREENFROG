@@ -21,7 +21,7 @@ export default function MemberInfo() {
             <ul>
                 <li>
                     <input 
-                        className="block" 
+                        className="block-short" 
                         type="username" 
                         name="username"
                         value={userInfo.username} 
@@ -34,7 +34,7 @@ export default function MemberInfo() {
             <ul>
                 <li>
                     <input 
-                        className="block" 
+                        className="block-short" 
                         type="useremail" 
                         name="useremail"
                         value={userInfo.useremail} 
@@ -47,7 +47,7 @@ export default function MemberInfo() {
             <ul>
                 <li>
                     <input 
-                        className="block" 
+                        className="block-short" 
                         type="userpw" 
                         name="userpw"
                         placeholder="비밀번호를 입력해 주세요"

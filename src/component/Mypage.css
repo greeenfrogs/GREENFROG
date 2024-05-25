@@ -9,17 +9,24 @@
     display: flex;
     flex-direction: column;
     align-items: right;
+    gap: 30px;
 
-    border-right-color: var(--surface---dark);
-    border-right-width: 2px;
-    margin-top: 150px;
-    margin-right: 80px;
+    position: absolute;
+    left: 100px;
+    top: 650px; /* 화면의 위에서부터 150px 아래로 */
+    padding-right: 60px; /* 오른쪽 패딩 */
+    padding-bottom: 400px;
+    padding-top: 50px;
+    border-right: 1px solid var(--theme---primary---solids);
+    margin-right: 30px;
 }
 
 .wrapper {
     display: flex;
     justify-self: space-between;
     align-items: center;
+
+    margin-bottom: 50px;
 }
 
 button{
@@ -39,47 +46,80 @@ button{
     color: var(--text--heading---dark);
 
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.info-button {
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    font-size: var(--heading3);
+    font-weight: bold;
+    background-color: transparent;
+    color: var(--theme--dark--solids);
+    padding: 8px 32px;
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+    transition: color 0.3s, background-color 0.3s;
+    text-decoration: none;
+}
+
+button:hover {
+    color: var(--theme---primary---solids); 
+    background-color: transparent;
+}
+button:hover {
+    color: var(--theme---primary---solids);
+    transform: scale(1.05);
+}
+button:active {
+    background-color: #d0d0d0; /* 클릭 시 배경색 */
+    transform: scale(0.95); /* 클릭 시 축소 효과 */
+}
+
+input:focus {
+    outline: 2px solid var(--theme---primary---solids);
 }
 
 h2 {
     font-size: var(--heading2);
 }
+ul {
+    flex-direction: row;
+    margin: 20px;
+}
 
 li{
-    margin: 20px;
+    margin-bottom: 10px;
+    margin-right: 50px;
 }
 
 .block {
     background-color: var(--theme---secondary---solids);
     border-radius: 15px;
-    border-color: var(--border---light);
+    border: none;
+    box-shadow: var(--shadow--drop--1);
+
+    margin-bottom: 30px;
+    padding: 10px;
+    width: 400px;
+    height: auto;
+}
+.block-short {
+    background-color: var(--theme---secondary---solids);
+    border-radius: 15px;
+    border: none;
     box-shadow: var(--shadow--drop--1);
 
     margin-bottom: 30px;
     padding: 10px;
 }
-
-.info-button {
-    display: flex;
-    align-items: center;
-    padding: 7px;
-    margin-bottom: 100px;
-
+.block-long {
     background-color: var(--theme---secondary---solids);
     border-radius: 15px;
-    border-color: var(--border---light);
+    border: none;
     box-shadow: var(--shadow--drop--1);
 
-    text-shadow: var(--shadow--drop--1);
-    font-family: 'IBM Plex Sans KR', -apple-system;
-    font-size: var(--large--text);
-    color: var(--text--heading---dark);
-
-    cursor: pointer;
-}
-
-.info-button:hover,
-button:hover {
-    color: var(--theme---primary---solids); 
-    background-color: transparent;
+    margin-bottom: 30px;
+    padding: 10px;
+    width: 400px;
+    height: 600px;
 }
