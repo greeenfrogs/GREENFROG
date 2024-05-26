@@ -35,7 +35,7 @@ export default function ClientInfo (){
                 <li>
                     <input 
                         className="block-long" 
-                        type="clientinfo" 
+                        type="text" 
                         name="clientinfo"
                         value={clientInfo.clientinfo} 
                         onChange={handleChange}

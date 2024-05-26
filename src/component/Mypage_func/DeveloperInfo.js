@@ -23,7 +23,7 @@ export default function DeveloperInfo (){
                 <li>
                     <input 
                         className="block" 
-                        type="developerintro" 
+                        type="text" 
                         name="developerintro"
                         value={DeveloperInfo.developerintro} 
                         onChange={handleChange}
@@ -36,7 +36,7 @@ export default function DeveloperInfo (){
                 <li>
                     <input 
                         className="block-long" 
-                        type="developerportfolio" 
+                        type="text" 
                         name="developerportfolio"
                         value={DeveloperInfo.developerportfolio} 
                         onChange={handleChange}
