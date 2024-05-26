@@ -19,23 +19,35 @@ export default function MemberInfo() {
     };
 
     const handleUpdateNickname = async () => {
-        const result = await updateNickname(userInfo.userId, userInfo.username);
-        if (result) {
-            alert('닉네임이 성공적으로 수정되었습니다.');
+        try {
+            const result = await updateNickname(userInfo.userId, userInfo.username);
+            if (result) {
+                alert('닉네임이 성공적으로 수정되었습니다.');
+            }
+        } catch (error) {
+            console.error('Failed to update nickname:', error);
         }
     };
 
     const handleUpdateEmail = async () => {
-        const result = await updateEmail(userInfo.userId, userInfo.useremail);
-        if (result) {
-            alert('이메일이 성공적으로 수정되었습니다.');
+        try {
+            const result = await updateEmail(userInfo.userId, userInfo.useremail);
+            if (result) {
+                alert('이메일이 성공적으로 수정되었습니다.');
+            }
+        } catch (error) {
+            console.error('Failed to update email:', error);
         }
     };
 
     const handleUpdatePassword = async () => {
-        const result = await updatePassword(userInfo.userId, userInfo.userpw);
-        if (result) {
-            alert('비밀번호가 성공적으로 수정되었습니다.');
+        try {
+            const result = await updatePassword(userInfo.userId, userInfo.userpw);
+            if (result) {
+                alert('비밀번호가 성공적으로 수정되었습니다.');
+            }
+        } catch (error) {
+            console.error('Failed to update password:', error);
         }
     };
 

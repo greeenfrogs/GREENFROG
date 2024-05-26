@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:8080';
+const BASE_URL = 'https://cfd7-112-77-116-137.ngrok-free.app';
 
 export const updateNickname = async (userId, nickname) => {
     try {
