@@ -72,7 +72,7 @@ export default function MemberInfo() {
                 <li>
                     <input 
                         className="block-short" 
-                        type="userpw" 
+                        type="password" 
                         name="userpw"
                         placeholder="비밀번호를 입력해 주세요"
                         required
