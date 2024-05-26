@@ -1,0 +1,67 @@
+.header_faq {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    margin-left: 50px;
+    flex-direction: row;
+}
+
+.menu_faq {
+    display: flex;
+    align-items: center;
+}
+
+.faq {
+    color: var(--text---body---dark);
+    font-size: var(--heading3);
+    font-weight: bolder;
+    margin-left: 0;
+    display: inline-block; /* p 태그를 inline-block으로 변경 */
+}
+
+.Searchbar {
+    width: 240px;
+    height: 50px;
+    margin-top: 14px;
+    margin-left: 25px;
+    cursor: pointer;
+}
+
+.Searchtype {
+    width: 147px;
+    height: 50px;
+    margin-top: 14px;
+    cursor: pointer;
+}
+
+.heading3 {
+    font-size: 20px; /* heading3 스타일 적용 */
+    color: var(--text---body---dark); /* 변수 적용 */
+    font-weight: bold;
+}
+
+.faq-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-right: 100px;
+}
+
+.table-row {
+    border-bottom: 1px solid var(--theme---primary---light);
+}
+
+.faq-text {
+    padding: 15px 0;
+    font-size: var(--heading3);
+    color: var(--text---body---dark);
+    text-align: left;
+    padding-left: 20px;
+}
+
+.extra-q {
+    align-items: center;
+}
