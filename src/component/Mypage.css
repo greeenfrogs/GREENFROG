@@ -75,7 +75,7 @@ button:active {
     transform: scale(0.95); /* 클릭 시 축소 효과 */
 }
 
-input:focus {
+textarea:focus,input:focus {
     outline: 2px solid var(--theme---primary---solids);
 }
 
@@ -109,6 +109,7 @@ li{
     border: none;
     box-shadow: var(--shadow--drop--1);
 
+    text-align: left;
     margin-bottom: 30px;
     padding: 10px;
 }
@@ -122,4 +123,30 @@ li{
     padding: 10px;
     width: 400px;
     height: 600px;
+}
+
+.attachment {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    background-image: url(./buttonfile/attachment_button.svg);
+    width: 113px; /* 이미지 크기에 맞게 조절하세요 */
+    height: 27px; /* 이미지 크기에 맞게 조절하세요 */
+    text-indent: -9999px; /* 텍스트 숨김 */
+    cursor: pointer;
+}
+
+.attachment input[type=file] {
+    position: absolute;
+    width: 113px;
+    height: 27px;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+
+.submitPage {
+    width: 70px;
 }
