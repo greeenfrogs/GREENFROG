@@ -75,7 +75,7 @@ button:active {
     transform: scale(0.95); /* 클릭 시 축소 효과 */
 }
 
-input:focus {
+textarea:focus,input:focus {
     outline: 2px solid var(--theme---primary---solids);
 }
 
