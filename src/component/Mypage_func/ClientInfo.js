@@ -33,7 +33,7 @@ export default function ClientInfo (){
             <ul>
                 <li>의뢰처 정보</li><br></br>
                 <li>
-                    <input 
+                    <textarea 
                         className="block-long" 
                         type="text" 
                         name="clientinfo"

@@ -34,7 +34,7 @@ export default function DeveloperInfo (){
             <ul>
                 <li>자기소개서(포토폴리오)</li><br></br>
                 <li>
-                    <input 
+                    <textarea 
                         className="block-long" 
                         type="text" 
                         name="developerportfolio"
