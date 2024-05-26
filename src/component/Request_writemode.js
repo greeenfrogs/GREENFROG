@@ -4,8 +4,14 @@ import intro_req from './figfile/intro_req.svg';
 import front from './buttonfile/front.svg';
 import back from './buttonfile/back.svg';
 import uiux from './buttonfile/uiux.svg';
+import WriteButton from './buttonfile/write_button.svg';
 
 export default function RequestWritemode() {
+  const handleSubmit = () => {
+    console.log('Submit button clicked');
+    // 의뢰 제출 로직을 여기에 추가하세요.
+  };
+
   return (
     <div className='introduce_container'>
       <img className='introduce_image' src={intro_req} alt='introduce_req' />
@@ -28,6 +34,18 @@ export default function RequestWritemode() {
       </div>
       <div className="write-container">
         예시글자임: 수박게임 만들고 싶다 어쩌구저쩌구
+      </div>
+      <div className="client-container">
+        <h2 className="heading2">의뢰처</h2>
+        <div className="email-box"></div>
+      </div>
+      <div className="submit-container">
+        <img
+          className='WriteButton'
+          src={WriteButton}
+          alt='WriteButton'
+          onClick={handleSubmit}
+        />
       </div>
     </div>
   );
