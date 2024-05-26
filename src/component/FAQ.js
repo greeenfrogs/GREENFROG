@@ -8,7 +8,6 @@ export default function FAQ() {
         <div style={{ display: 'flex', alignItems: 'center' }}>
             <span className="introduce_container">
                 <img className="introduce_image" src={intro_FAQ} alt="intro_FAQ" />
-
             </span>
         </div>
     )

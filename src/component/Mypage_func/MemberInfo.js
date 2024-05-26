@@ -5,9 +5,9 @@ import '../Mypage.css';
 export default function MemberInfo() {
     const [userInfo, setUserInfo] = useState({
         userId: 0,
-        username: "",
-        useremail: "",
-        userpw: ""
+        username: "string",
+        useremail: "string",
+        userpw: "string"
     });
 
     const handleChange = (e) => {
@@ -60,6 +60,7 @@ export default function MemberInfo() {
                         className="block-short" 
                         type="username" 
                         name="username"
+                        placeholder=""
                         value={userInfo.username} 
                         onChange={handleChange}
                         required
@@ -73,6 +74,7 @@ export default function MemberInfo() {
                         className="block-short" 
                         type="useremail" 
                         name="useremail"
+                        placeholder=""
                         value={userInfo.useremail} 
                         onChange={handleChange}
                         required
