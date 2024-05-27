@@ -48,20 +48,64 @@
     margin-top: 20px;
     margin-left: 30px;
     margin-right: 100px;
+    margin-bottom: 100px;
 }
 
 .table-row {
     border-bottom: 1px solid var(--theme---primary---light);
+    border-top: 1px solid var(--theme---primary---light);
 }
 
-.faq-text {
+.table-row.answer-row {
+    border-bottom: none;
+}
+
+.faq-question {
     padding: 15px 0;
+    font-size: var(--heading3);
+    color: var(--text---body---dark);
+    text-align: left;
+    padding-left: 20px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.faq-question:hover {
+    color: var(--text---heading---dark);
+    transform: scale(1.05) translateX(5px);
+}
+
+.faq-question:active {
+    transform: scale(1.05) translateX(5px);
+}
+
+.faq-question.active {
+    color: var(--text---heading---dark);
+    font-weight: bold;
+}
+
+.faq-answer-container {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+}
+
+.faq-answer-container.open {
+    max-height: 1000px; /* 충분히 큰 값으로 설정하여 답변이 충분히 표시되도록 함 */
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.faq-answer {
     font-size: var(--heading3);
     color: var(--text---body---dark);
     text-align: left;
     padding-left: 20px;
 }
 
-.extra-q {
-    align-items: center;
+.extra-q p {
+    text-align: center;
+    color: var(--text---body---muted);
+    font-size: var(--heading4);
+
+    margin-bottom: 100px;
 }
