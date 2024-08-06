@@ -85,7 +85,7 @@ export default function Request() {
                 />
             </div>
             <div>
-                <table className="request-table">
+                <table className="table">
                     <tbody>
                         {Array.from(Array(11).keys()).map(row => (
                             <tr key={row} className="table-row">
