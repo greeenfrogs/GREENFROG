@@ -54,21 +54,21 @@ export default function Free() {
                         />
                         <div className="dropdown-content">
                             <a 
-                                className={`heading3 ${selectedMenu === '전체' ? 'selected' : ''}`}
+                                className={`dropdown-heading ${selectedMenu === '전체' ? 'selected' : ''}`}
                                 href="/all"
                                 onClick={() => handleMenuClick('전체')}
                             >
                                 전체
                             </a>
                             <a 
-                                className={`heading3 ${selectedMenu === '모임' ? 'selected' : ''}`} 
+                                className={`dropdown-heading ${selectedMenu === '모임' ? 'selected' : ''}`} 
                                 href="/meeting"
                                 onClick={() => handleMenuClick('모임')}
                             >
                                 모임
                             </a>
                             <a 
-                                className={`heading3 ${selectedMenu === '자유' ? 'selected' : ''}`} 
+                                className={`dropdown-heading ${selectedMenu === '자유' ? 'selected' : ''}`} 
                                 href="/talking"
                                 onClick={() => handleMenuClick('자유')}
                             >

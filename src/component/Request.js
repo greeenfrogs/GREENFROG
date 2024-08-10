@@ -54,21 +54,21 @@ export default function Request() {
                         />
                         <div className="dropdown-content">
                             <a 
-                                className={`heading3 ${selectedMenu === '전체' ? 'selected' : ''}`} // 선택된 메뉴인 경우에만 'selected' 클래스 추가
+                                className={`dropdown-heading ${selectedMenu === '전체' ? 'selected' : ''}`} // 선택된 메뉴인 경우에만 'selected' 클래스 추가
                                 href="/all" 
                                 onClick={() => handleMenuClick('전체')} // 클릭 이벤트 핸들러 추가
                             >
                                 전체
                             </a>
                             <a 
-                                className={`heading3 ${selectedMenu === '의뢰처' ? 'selected' : ''}`} 
+                                className={`dropdown-heading ${selectedMenu === '의뢰처' ? 'selected' : ''}`} 
                                 href="/favorites" 
                                 onClick={() => handleMenuClick('의뢰처')}
                             >
                                 의뢰처
                             </a>
                             <a 
-                                className={`heading3 ${selectedMenu === '의뢰 제목' ? 'selected' : ''}`} 
+                                className={`dropdown-heading ${selectedMenu === '의뢰 제목' ? 'selected' : ''}`} 
                                 href="/inProgress" 
                                 onClick={() => handleMenuClick('의뢰 제목')}
                             >

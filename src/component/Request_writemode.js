@@ -17,7 +17,9 @@ export default function RequestWritemode() {
       <img className='introduce_image' src={intro_req} alt='introduce_req' />
       <div className="title-container">
         <h1 className="heading2">의뢰 제목</h1>
-        <div className="name-box"></div>
+        <div className="name-box">
+          <input type='text' />
+        </div>
       </div>
       <div className="type-container">
         <h2 className="heading2">의뢰 유형</h2>
@@ -29,12 +31,10 @@ export default function RequestWritemode() {
       </div>
       <div className="price-container">
         <h2 className="heading2">가격 제시</h2>
-        <button className="price-button">원</button>
+        <option className="price-button" placeholder='1000'>원</option>
         <span className="price-text">제시</span>
       </div>
-      <div className="write-container">
-        예시글자임: 수박게임 만들고 싶다 어쩌구저쩌구
-      </div>
+        <textarea className='write-container' placeholder='예시글자임: 수박게임 만들고 싶다 어쩌구저쩌구' />
       <div className="client-container">
         <h2 className="heading2">의뢰처</h2>
         <div className="email-box"></div>

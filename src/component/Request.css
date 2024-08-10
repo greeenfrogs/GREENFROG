@@ -52,6 +52,12 @@
     display: block;
 }
 
+.dropdown-heading {
+    font-size: 20px; /* heading3 스타일 적용 */
+    color: var(--text---body---dark); /* 변수 적용 */
+    font-weight: bold;
+}
+
 .heading3 {
     font-size: 20px; /* heading3 스타일 적용 */
     color: var(--text---body---dark); /* 변수 적용 */
