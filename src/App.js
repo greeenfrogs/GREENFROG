@@ -8,8 +8,8 @@ import Free from './component/Free';
 import Activity from './component/Activity';
 import Mypage from './component/Mypage';
 import FAQ from './component/FAQ';
-import RequestWritemode from './component/Request_writemode';
-import FreeWritemode from './component/Free_writemode';
+import RequestWritemode from './component/writeView_mode/Request_writemode';
+import FreeWritemode from './component/writeView_mode/Free_writemode';
 
 function App() {
   return (

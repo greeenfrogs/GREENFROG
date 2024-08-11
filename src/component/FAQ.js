@@ -36,11 +36,6 @@ export default function FAQ() {
             <div className="header_faq">
                 <div className="menu_faq">
                     <p className="faq">자주 묻는 질문</p>
-                    <img 
-                        className="Searchbar" 
-                        src={searchbar_svg} 
-                        alt="searchbar" 
-                    />
                 </div>
             </div>
             <table className="faq-table">
