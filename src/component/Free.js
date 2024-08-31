@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import './Request.css';
 import '../index.css';
 import intro_free from './figfile/intro_free.svg';
 import searchbar_svg from './buttonfile/searchbar.svg';
-import searchtype_svg from './buttonfile/searchtype.svg';
 import write_button_svg from './buttonfile/write_button.svg';
 import frog_empty_svg from './buttonfile/frog_empty.svg';
 import frog_click_svg from './buttonfile/frog_click.svg';
@@ -16,7 +15,15 @@ export default function Free() {
     const [frogClicked, setFrogClicked] = useState(Array.from({ length: 11 }, () => false));
     const [currentPage, setCurrentPage] = useState(1);
     const [selectedMenu, setSelectedMenu] = useState('전체');
+    const [posts, setPosts] = useState([]);
     const totalPages = 10;
+
+    useEffect(() => {
+        fetch(`/api/free?page=${currentPage - 1}&size=10`)
+            .then(response => response.json())
+            .then(data => setPosts(data))
+            .catch(error => console.error('Error fetching posts:', error));
+    }, [currentPage]);
 
     const handleMenuClick = (option) => {
         if (option === 'write') {
@@ -56,30 +63,48 @@ export default function Free() {
             </div>
             <div>
                 <table className="table">
-                    <tbody>
-                        {Array.from(Array(11).keys()).map(row => (
-                            <tr key={row} className="table-row">
-                                {Array.from(Array(7).keys()).map(col => (
-                                    <td key={col} className={(col === 0 && row !== 0 && row !== 10) ? 'heading3' : ''}>
-                                        {(col === 0 && row === 0) ? '' :
-                                            (col === 6 && row === 0) ? '' :
-                                            (col === 0) ?
-                                                <img src={frogClicked[row] ? frog_click_svg : frog_empty_svg}
-                                                    alt={`frog_${row}-${col}`}
-                                                    className="frog-icon"
-                                                    onClick={() => handleFrogClick(row)} /> :
-                                                (col === 6) ? <img src={correct_button_svg} alt={`correct_button_${row}-${col}`} className="correct-icon" /> :
-                                                (col === 1 && row === 0) ? <span className="heading3">날짜</span> :
-                                                    (col === 2 && row === 0) ? <span className="heading3">닉네임</span> :
-                                                        (col === 3 && row === 0) ? <span className="heading3">제목</span> :
-                                                            (col === 4 && row === 0) ? <span className="heading3">유형</span> :
-                                                                (col === 5 && row === 0) ? <span className="heading3">진행 상태</span> :
-                                                                    `${row}-${col}`}
-                                    </td>
-                                ))}
-                            </tr>
-                        ))}
-                    </tbody>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>날짜</th>
+                        <th>제목</th>
+                        <th>글쓴이</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {posts.map((post, rowIndex) => (
+                        <tr key={post.id} className="table-row">
+                            <td>
+                                <img
+                                    src={frogClicked[rowIndex] ? frog_click_svg : frog_empty_svg}
+                                    alt={`frog_${rowIndex}`}
+                                    className="frog-icon"
+                                    onClick={() => handleFrogClick(rowIndex)}
+                                />
+                            </td>
+                            <td>
+                             {new Date(post.date).toLocaleDateString()} {/* 날짜 출력 */}
+                            </td>
+                            <td>
+                                    <span
+                                        className="link"
+                                        onClick={() => navigate(`/request/view/${post.id}`)}
+                                    >
+                                        {post.title}
+                                    </span>
+                            </td>
+                            <td>{post.client}</td>
+                            <td>
+                                <img
+                                    src={correct_button_svg}
+                                    alt={`correct_button_${rowIndex}`}
+                                    className="correct-icon"
+                                />
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
                 </table>
             </div>
             <Pagination 

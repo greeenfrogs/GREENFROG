@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import './Request_viewmode.css';
-import intro_req from './figfile/intro_req.svg';
-import front from './buttonfile/front.svg';
-import back from './buttonfile/back.svg';
-import uiux from './buttonfile/uiux.svg';
-import EditButton from './buttonfile/correct_button.svg'; // 수정 버튼 이미지
-import DeleteButton from './buttonfile/correct_button.svg'; // 삭제 버튼 이미지
+import intro_req from '../figfile/intro_req.svg';
+import front from '../buttonfile/front.svg';
+import back from '../buttonfile/back.svg';
+import uiux from '../buttonfile/uiux.svg';
+import EditButton from '../buttonfile/correct_button.svg'; // 수정 버튼 이미지
+import DeleteButton from '../buttonfile/correct_button.svg'; // 삭제 버튼 이미지
 import { useParams, useNavigate } from 'react-router-dom';
 
 export default function RequestViewmode() {
@@ -54,6 +54,70 @@ export default function RequestViewmode() {
         return <div>Loading...</div>;
     }
 
+    //댓글 관련 js : 나중에 back-end와 연결할 때 수정할 것.
+    const commentBtn = document.querySelector("#commentFrm");
+    const commentList = document.querySelector("#comment-list");
+    const total = document.querySelector("h4 > span");
+    const list = [];
+    
+    function Comment(content) {
+      this.userid = "cloudcoke";
+      this.content = content;
+      this.date = "2022-11-15";
+    }
+    
+    function createRow(userid, content, date) {
+      const ul = document.createElement("ul");
+      const li1 = document.createElement("li");
+      const li2 = document.createElement("li");
+      const li3 = document.createElement("li");
+    
+      ul.append(li1);
+      ul.append(li2);
+      ul.append(li3);
+    
+      ul.setAttribute("class", "comment-row");
+      li1.setAttribute("class", "comment-id");
+      li2.setAttribute("class", "comment-content");
+      li3.setAttribute("class", "comment-date");
+    
+      li1.innerHTML = userid;
+      li2.innerHTML = content;
+      li3.innerHTML = date;
+    
+      return ul;
+    }
+    
+    function drawing() {
+      commentList.innerHTML = "";
+      for (let i = list.length - 1; i >= 0; i--) {
+        const row = createRow(list[i].userid, list[i].content, list[i].date);
+        commentList.append(row);
+      }
+    }
+    
+    function totalRecord() {
+      total.innerHTML = `(${list.length})`;
+    }
+    
+    function commentBtnHandler(e) {
+      e.preventDefault();
+      const input = e.target.content;
+      if (input.value === "") {
+        alert("내용을 넣고 등록 버튼을 눌러주세요.");
+        return;
+      }
+      const commentObj = new Comment(input.value);
+      list.push(commentObj);
+      totalRecord();
+    
+      drawing();
+      e.target.reset();
+    }
+    
+    totalRecord();
+    commentBtn.addEventListener("submit", commentBtnHandler);
+
     return (
         <div className='introduce_container'>
             <img className='introduce_image' src={intro_req} alt='introduce_req' />
@@ -61,27 +125,15 @@ export default function RequestViewmode() {
                 <h1 className="heading2">의뢰 제목</h1>
                 <div className="name-box">{request.title}</div>
             </div>
-            <div className="type-container">
-                <h2 className="heading2">의뢰 유형</h2>
-                <div className="icon-container">
-                    {request.types && request.types.includes('Web') && <img className='type-icon' src={front} alt='front_icon' />}
-                    {request.types && request.types.includes('IOS') && <img className='type-icon' src={back} alt='back_icon' />}
-                    {request.types && request.types.includes('Android') && <img className='type-icon' src={uiux} alt='uiux_icon' />}
-                </div>
-            </div>
-            <div className="price-container">
-                <h2 className="heading2">가격 제시</h2>
-                <div className="price-button">{request.price} 원</div>
+            <div className="client-container">
+                <h2 className="heading2">{request.id}</h2>
+                <div className="email-box">{request.client}</div>
             </div>
             <textarea
                 className="write-container"
                 value={request.content}
                 readOnly
             />
-            <div className="client-container">
-                <h2 className="heading2">의뢰처</h2>
-                <div className="email-box">{request.client}</div>
-            </div>
             <div className="submit-container">
                 <img
                     className='EditButton'
@@ -96,6 +148,21 @@ export default function RequestViewmode() {
                     onClick={handleDelete}
                 />
             </div>
+            <div className='comment-container'>
+                <ul class="comment">
+                    <li class="comment-form">
+                        <form id="commentFrm">
+                            <h4>댓글쓰기 <span></span></h4>
+                            <span class="ps_box">
+                                <input type="text" placeholder="댓글 내용을 입력해주세요." class="int" name="content" />
+                            </span>
+                            <input type="submit" class="btn" value="등록" />
+                        </form>
+                    </li>
+                    <li id="comment-list"></li>
+                </ul>
+            </div>
+            
         </div>
     );
 }
