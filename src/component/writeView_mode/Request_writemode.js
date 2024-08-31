@@ -44,7 +44,7 @@ export default function RequestWritemode() {
     <div className='introduce_container'>
       <img className='introduce_image' src={intro_req} alt='introduce_req' />
       <div className="title-container">
-        <h1 className="heading2">의뢰 제목</h1>
+        <h1 className="heading2">제목</h1>
           <input 
               className='name-box' 
               type='text' 

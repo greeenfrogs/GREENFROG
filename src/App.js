@@ -10,6 +10,7 @@ import Mypage from './component/Mypage';
 import FAQ from './component/FAQ';
 import RequestWritemode from './component/writeView_mode/Request_writemode';
 import FreeWritemode from './component/writeView_mode/Free_writemode';
+import RequestViewmode from './component/writeView_mode/Request_viewmode';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/faq" element={<FAQ />} />
           <Route path="/request/writemode" element={<RequestWritemode />} />
           <Route path='/free/writemode' element={<FreeWritemode />} />
+          <Route path='/request/view' element={<RequestViewmode />} />
         </Routes>
       </BrowserRouter>
     </div>

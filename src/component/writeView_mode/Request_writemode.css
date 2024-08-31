@@ -56,7 +56,7 @@
     margin-left: 125px;
     width: 80%; /* 부모 요소의 전체 너비 */
     height: 300px; /* 원하는 높이 설정 */
-    font-size: 24px; /* 텍스트 크기 */
+    font-size: var(--heading4); /* 텍스트 크기 */
     justify-content: center; /* 수평 가운데 정렬 */
     align-items: flex-start; /* 수직 위쪽 정렬 */
     margin-top: 60px; /* 간격 추가 */
