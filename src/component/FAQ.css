@@ -97,7 +97,7 @@
 
 .faq-answer {
     font-size: var(--heading3);
-    color: var(--text---body---dark);
+    color: var(--text---heading---dark);
     text-align: left;
     padding-left: 20px;
 }

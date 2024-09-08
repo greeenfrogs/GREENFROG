@@ -7,12 +7,6 @@ import logo from './figfile/logo1.svg';
 //Problem!!!! 여기 전체가 화면 비율 바뀔 때 같이 글자 포지션 고정이 안됨
 //맨 위에 ul il, nav로 로그인/회원가입 만들기
 export default function Header() {
-  const [menuActive, setMenuActive] = useState(false);
-
-  const handleMenuToggle = () =>{
-    setMenuActive(!menuActive);
-  };
-
   return (
     <div className='navbar'>
         <Link to="/" className='logo' >
@@ -26,11 +20,7 @@ export default function Header() {
           </h1>
         </Link>
 
-        <button className='navbar-togglebtn' onClick={handleMenuToggle}>
-          <span className={`navbar-icon ${menuActive ? 'active' : ''}`}></span>
-        </button>
-
-        <nav className={`navbar-menu ${menuActive ? 'active' : ''}`}>
+        <nav className='navbar-menu'>
           <ul>
             <li><Link to="/request" className='li'>의뢰 게시판</Link></li>
             <li><Link to="/free" className='li'>자유 게시판</Link></li>
