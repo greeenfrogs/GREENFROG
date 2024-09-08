@@ -31,3 +31,10 @@ button:hover {
   background-color: var(—surface—light); 
 }
 }
+.first {
+  margin-top: 30px;
+}
+.intro {
+  width: 70%;
+  height: auto;
+}

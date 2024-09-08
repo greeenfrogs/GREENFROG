@@ -1,46 +1,17 @@
-.request-button,
-.free-button,
-.activity-button,
-.MYPAGE-button,
-.FAG-button {
-  font-family: 'IBM Plex Sans KR', sans-serif;
-  font-size: var(--heading3);
-  font-weight: bold;
-  background-color: transparent;
-  color: var(--theme--dark--solids); 
-  padding: 8px 32px;
-  border: none;
-  cursor: pointer;
-  transition: color 0.3s, background-color 0.3s; 
-  text-decoration: none; 
-}
+.logo {
+  text-decoration: none;
+  color : var(--theme--dark--solids);
+  padding-left: 10px;
 
-.request-button:hover,
-.free-button:hover,
-.activity-button:hover,
-.MYPAGE-button:hover,
-.FAG-button:hover {
-  color: var(--theme---primary---solids); 
-  background-color: transparent;
 }
 
 .logo_container {
-    margin-right: 5px; 
-  }
-  
-.logo_image {
-  width: 100px;
-  height: auto;
+  margin-right: 5px; 
 }
 
-.HeaderDiv {
-  padding-top: 40px;
-  padding-left: 20px;
-  padding-right: 15px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.logo_image {
+width: 100px;
+height: auto;
 }
 
 .greenfrogTitle {
@@ -62,8 +33,123 @@ h1 {
 
 li {
   list-style: none;
-  margin : 10 10 10 10;
-  padding: 10 10 10 10;
-  border: 0px;
   float: left;
+}
+.li {
+  font-family: 'IBM Plex Sans KR', sans-serif;
+  font-size: var(--heading3);
+  font-weight: bold;
+
+  color: var(--theme--dark--solids); 
+  padding: 8px 32px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.3s, background-color 0.3s; 
+}
+
+.li:hover {
+  color: var(--theme---primary---solids); 
+  background-color: transparent;
+}
+
+.navbar {
+  padding-top: 40px;
+  padding-left: 20px;
+  padding-right: 15px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.navbar-togglebtn{
+  display: none;
+  cursor: pointer;
+  border: none;
+}
+
+.navbar-icon{
+  width: 20px;
+  height: 20px;
+  background-image: url(../component/buttonfile/menu.svg);
+  background-size: cover;
+}
+.navbar-icon:active {
+  background-image: url(../component/buttonfile/menu-selected.svg);
+}
+
+.navbar-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+}
+.navbar-menu:active {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width : 1190px){
+  .logo{
+    display: flex;
+    flex-direction: row;
+  }
+  .logo_image{
+    width: 65px;
+    height: auto;
+  }
+  .greenfrogTitle{
+    align-items: center;
+  }
+  .greenfrogLetter{
+    font-size: 0px;
+  }
+  .navbar {
+    gap: 15px;
+  }
+  .li {
+    font-size: var(--large-button-size);
+    font-weight: 800;
+    padding-right: 5px;
+  }
+}
+@media screen and (max-width : 846px) {
+  .logo{
+    display: flex;
+    flex-direction: row;
+  }
+  .logo_image{
+    width : 50px;
+    height : auto;
+  }
+  .greenfrogTitle {
+    align-items: center;
+  }
+  .greenfrogLetter{
+    font-size: 0px;
+  }
+  .navbar-togglebtn{
+    display: flex;
+    justify-content: end;
+
+  }
+  .navbar {
+    flex-direction: row;
+    align-items: flex-start;
+    padding-left: 10px;
+  }
+  .navbar-menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .navbar-menu:active {
+    display: flex;
+  }
 }

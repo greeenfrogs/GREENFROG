@@ -3,6 +3,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Header from './component/Header';
+import Home from './Home';
 import Request from './component/Request';
 import Free from './component/Free';
 import Activity from './component/Activity';
@@ -18,6 +19,7 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
+          <Route path='/' element={<Home />} />
           <Route path="/request" element={<Request />} />
           <Route path="/free" element={<Free />} />
           <Route path="/activity" element={<Activity />} />

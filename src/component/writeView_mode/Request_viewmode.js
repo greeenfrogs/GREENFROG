@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Request_viewmode.css';
 import intro_req from '../figfile/intro_req.svg';
-import front from '../buttonfile/front.svg';
-import back from '../buttonfile/back.svg';
-import uiux from '../buttonfile/uiux.svg';
 import EditButton from '../buttonfile/correct_button.svg'; // 수정 버튼 이미지
 import DeleteButton from '../buttonfile/correct_button.svg'; // 삭제 버튼 이미지
 import { useParams, useNavigate } from 'react-router-dom';

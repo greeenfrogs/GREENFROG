@@ -11,7 +11,7 @@
     align-items: right;
     gap: 30px;
 
-    position: absolute;
+    position: sticky;
     left: 100px;
     top: 650px; /* 화면의 위에서부터 150px 아래로 */
     padding-right: 60px; /* 오른쪽 패딩 */
@@ -23,10 +23,44 @@
 
 .wrapper {
     display: flex;
-    justify-self: space-between;
-    align-items: center;
+    flex-direction: row;
+    align-items: flex-start;
 
     margin-bottom: 50px;
+}
+
+@media screen and (max-width : 1190px){
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+    .menu {
+        display: flex;
+        flex-direction: row;
+        padding-bottom: 12px;
+        border-bottom: 1px solid var(--theme---primary---solids);
+        border-right: none;
+        font-size: var(--heading6);
+    }
+}
+
+.info {
+    flex: 1;
+    margin-left: 30px;
+}
+
+.info-button {
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    font-size: var(--heading3);
+    font-weight: bold;
+    background-color: transparent;
+    color: var(--theme--dark--solids);
+    padding: 8px 32px;
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+    transition: color 0.3s, background-color 0.3s;
+    text-decoration: none;
 }
 
 button{
@@ -48,19 +82,7 @@ button{
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
-.info-button {
-    font-family: 'IBM Plex Sans KR', sans-serif;
-    font-size: var(--heading3);
-    font-weight: bold;
-    background-color: transparent;
-    color: var(--theme--dark--solids);
-    padding: 8px 32px;
-    border: none;
-    box-shadow: none;
-    cursor: pointer;
-    transition: color 0.3s, background-color 0.3s;
-    text-decoration: none;
-}
+
 
 button:hover {
     color: var(--theme---primary---solids); 
