@@ -89,7 +89,7 @@ export default function Free() {
                             <td>
                                     <span
                                         className="link"
-                                        onClick={() => navigate(`/request/view/${post.id}`)}
+                                        onClick={() => navigate(`/free/view/${post.id}`)}
                                     >
                                         {post.title}
                                     </span>
