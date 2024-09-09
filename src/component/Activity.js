@@ -4,7 +4,6 @@ import './Request.css';
 import '../index.css';
 import intro_act from './figfile/intro_act.svg';
 import searchbar_svg from './buttonfile/searchbar.svg';
-import write_button_svg from './buttonfile/write_button.svg';
 import frog_empty_svg from './buttonfile/frog_empty.svg';
 import frog_click_svg from './buttonfile/frog_click.svg';
 import correct_button_svg from './buttonfile/correct_button.svg';
