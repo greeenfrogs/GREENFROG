@@ -8,7 +8,6 @@ export default function Activity() {
         <div style={{ display: 'flex', alignItems: 'center' }}>
             <span className="introduce_container">
                 <img className="introduce_image" src={intro_act} alt="intro_fact" />
-
             </span>
         </div>
     )

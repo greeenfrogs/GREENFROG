@@ -109,7 +109,7 @@ li {
     padding-right: 5px;
   }
 }
-@media screen and (max-width : 846px) {
+@media screen and (max-width : 940px) {
   .logo{
     display: flex;
     flex-direction: row;
@@ -136,7 +136,21 @@ li {
     gap: 10px;
   }
   .li{
-    font-size: 10px;
+    font-size: 14px;
     padding: 5px;
+  }
+}
+@media screen and (max-width: 550px) {
+  ul{
+    display: block;
+    margin: 0px;
+  }
+  .li{
+    font-size: 10px;
+    padding: none;
+    margin: none;
+  }
+  li{
+    margin: none;
   }
 }
