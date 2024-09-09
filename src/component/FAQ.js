@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import './FAQ.css';
 import '../index.css';
 import intro_FAQ from './figfile/intro_faq.svg';
-import searchbar_svg from './buttonfile/searchbar.svg';
 
 export default function FAQ() {
     const faqs = [
